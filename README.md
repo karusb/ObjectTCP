@@ -8,7 +8,7 @@ Currently supports JSON and Binary transfer modes. Binary mode is not cross plat
 JSON mode may not support all .NET generic data types.
 
 # Convention
-##**Your Object**
+## **Your Object**
 DataClassConcept class represent your own class to send, this class must be known to both Client and Server.
 Add Serializable attribute to your class.
 ```c#
@@ -20,7 +20,7 @@ Add Serializable attribute to your class.
         public List<string> strList = new List<string>();
     }
 ```
-##**Server**
+## **Server**
 ```c#
 using OTcpCoreComponents;
 using OTcpServerCore;
@@ -31,7 +31,7 @@ using OTcpServerCore;
             server.StartServer(cmds,"127.0.0.1", 12345, TransferType.JSON);
 ```
 
-###**Define Response Function**
+### **Define Response Function**
 
 commandFunction return parameter represent the returned object to the client. Void will result in no response to the client.
 commandFunction argument is always one parameter in the type of "object" and needs to be cast to the correct class before use.
@@ -46,7 +46,7 @@ commandFunction argument is always one parameter in the type of "object" and nee
             return dc;
         }
 ```
-##**Client**
+## **Client**
 
 Returned message data type can be accessed in runtime via the Header. Object returned must be cast to the correct class.
 ```c#
