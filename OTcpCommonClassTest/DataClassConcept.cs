@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace OTcpCommonClassTest
 {
     [Serializable]
-    public class DataClassConcept : object
+    public class DataClassConcept
     {
         public string str;
         public int number;

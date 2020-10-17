@@ -9,11 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OTcpCommonClassTest", "OTcp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OTcpClientCore", "OTcpClientCore\OTcpClientCore\OTcpClientCore.csproj", "{A86F5986-4856-48FC-9D3B-C5911C918E6C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OTcpServerLib", "OTcpServerCore\OTcpServer\OTcpServerLib.csproj", "{790AC015-C13C-4D67-A886-3844E462FCA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OTcpServerCore", "OTcpServerCore\OTcpServer\OTcpServerCore.csproj", "{790AC015-C13C-4D67-A886-3844E462FCA1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OTcpCoreComponents", "OTcpCoreProject\OTcpCoreComponents\OTcpCoreComponents.csproj", "{514C701A-9107-44EB-B325-11C3AD1A1DAB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OTcpServerTestExec", "OTcpServerTestExec\OTcpServerTestExec\OTcpServerTestExec.csproj", "{063D1FFD-47CD-4E98-9FA9-10B3E3393D66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "XUnitTestProject1\UnitTests.csproj", "{A22A8750-1511-4787-ACAF-F23ED9E9549E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{063D1FFD-47CD-4E98-9FA9-10B3E3393D66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{063D1FFD-47CD-4E98-9FA9-10B3E3393D66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{063D1FFD-47CD-4E98-9FA9-10B3E3393D66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A22A8750-1511-4787-ACAF-F23ED9E9549E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A22A8750-1511-4787-ACAF-F23ED9E9549E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A22A8750-1511-4787-ACAF-F23ED9E9549E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A22A8750-1511-4787-ACAF-F23ED9E9549E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

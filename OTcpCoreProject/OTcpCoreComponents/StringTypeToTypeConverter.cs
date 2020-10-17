@@ -73,7 +73,7 @@ namespace OTcpCoreComponents
                             }
                             catch
                             {
-                                //We will ignore this, because the Type might still be in one of the other Assemblies.
+                                throw new SystemException("Assembly not found, in another assembly?");
                             }
                         }
                     }
@@ -81,12 +81,12 @@ namespace OTcpCoreComponents
             }
             catch (Exception exception)
             {
-                //throw my custom exception    
+                throw exception;    
             }
 
             if (type == null)
             {
-                //throw my custom exception.
+                throw new Exception("type is null");
             }
 
             return type;

@@ -21,10 +21,6 @@ namespace OTcpCoreComponents
         public static int TypeStringLength = 64;
         public static int HeaderSize = ObjectBinarySerialization.ObjectToByteArray(new OTcpServerHeader(HashAlgoProvider.HashBytes(Encoding.UTF8.GetBytes("OTcp"), HashAlgorithmName.SHA256), 102,"")).Length;
 
-
-
-
-        // Creates totally empty header
         public OTcpServerHeader(byte[] command,long dataSize, string expectType,Guid token)
         {
             this.CommandHash = command;

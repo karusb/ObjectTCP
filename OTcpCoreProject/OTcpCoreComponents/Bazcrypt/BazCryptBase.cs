@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-
 namespace Bazcrypt
 {
 
@@ -30,7 +26,7 @@ namespace Bazcrypt
             return ToByteArray(bitK);
 
         }
-        public byte[] BazCrypt(byte[] message,byte[] key,int algorithm)
+        public byte[] DISABLED_BazCrypt(byte[] message,byte[] key,int algorithm)
         {
             System.Collections.BitArray bitM = new System.Collections.BitArray(message);
             System.Collections.BitArray bitK = new System.Collections.BitArray(key);
@@ -50,6 +46,26 @@ namespace Bazcrypt
 
                                                   
             }
+            return ToByteArray(bitO);
+        }
+        public byte[] BazCrypt(byte[] message, byte[] key,int algorithm,int bitres)
+        {
+            System.Collections.BitArray[] bitM = ResolutionArraySolver.CreateResolutionArray(new System.Collections.BitArray(message), bitres);
+            System.Collections.BitArray[] bitK = ResolutionArraySolver.CreateResolutionArray(new System.Collections.BitArray(key), bitres);
+            System.Collections.BitArray[] bitOr = ResolutionArraySolver.CreateResolutionArray(new System.Collections.BitArray(message), bitres);
+            System.Collections.BitArray bitO = new System.Collections.BitArray(message.Length, false);
+
+            for(int i = 0; i < bitM.Length;++i)
+            {
+                bitK[i%bitK.Length] = AlgoSelect(bitK[i%bitK.Length], algorithm);
+                //bitM[i] = AlgoSelect(bitM[i], algorithm);
+                for (int j = 0; j < bitres; ++j)
+                {
+                    var xor = bitM[i].Get(j) ^ bitK[i%bitK.Length].Get(j);
+                    bitOr[i].Set(j, xor);
+                }
+            }
+            bitO = ResolutionArraySolver.UndoResolutionArray(bitOr);
             return ToByteArray(bitO);
         }
         public static byte[] ToByteArray(System.Collections.BitArray bits)

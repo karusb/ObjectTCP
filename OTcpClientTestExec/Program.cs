@@ -22,6 +22,7 @@ namespace TcpClientTestExec
             dcsend.strList.Add("kantikniet");
             client.Send("osman", dcsend);
             var msg = client.Receive();
+            
             DataClassConcept dc = (DataClassConcept)msg.Message;
            
             Console.WriteLine(dc.number);
